@@ -5,8 +5,7 @@
  * Date: 06.10.2018
  * Time: 16:07
  */
-
-use Com2Pdf;
+require "Com2Pdf.php";
 
 $pdf_creator = new Com2Pdf();
 $pdf_creator->SetData();
