@@ -6,7 +6,7 @@
  * Date: 06.10.2018
  * Time: 14:59
  */
-require $_SERVER['DOCUMENT_ROOT'].'/lib/fpdf181/fpdf.php';
+require $_SERVER['DOCUMENT_ROOT'].'/Com2Pdf/lib/fpdf181/fpdf.php';
 
 class Com2Pdf
 {
