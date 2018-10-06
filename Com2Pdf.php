@@ -6,7 +6,7 @@
  * Date: 06.10.2018
  * Time: 14:59
  */
-require "/lib/fpdf181/fpdf.php";
+require '/lib/fpdf181/fpdf.php';
 
 class Com2Pdf
 {
