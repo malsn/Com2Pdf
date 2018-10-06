@@ -23,7 +23,7 @@ class Com2Pdf
         $this->pdf->Cell(40,10,'Hello World!');
     }
 
-    protected function Output(){
+    public function Output(){
         $this->pdf->Output();
     }
 }
