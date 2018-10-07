@@ -22,7 +22,7 @@ class Com2Pdf
     protected function SetData()
     {
         $this->pdf->AddFont('ArialMT','arial.php');
-        $this->pdf->SetFont('ArialMT','B',16);
+        $this->pdf->SetFont('ArialMT','',35);
         $this->pdf->AddPage();
         $this->pdf->Cell(40,10,'Hello World!');
     }
