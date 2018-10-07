@@ -32,14 +32,29 @@ class Com2Pdf
     {
         $this->pdf->AddPage();
         $this->pdf->AddFont('DejaVu','','DejaVuSans.ttf',true);
+        $this->pdf->SetFont('DejaVu','B',10);
+        $this->pdf->Cell(80,10,"Грузоотправитель:");
+        $this->pdf->Cell(20,10);
         $this->pdf->SetFont('DejaVu','',10);
-        $this->pdf->Cell(0,10,"Грузоотправитель: {$this->options['sender']}");
+        $this->pdf->Cell(0,10,$this->options['sender']);
         $this->pdf->Ln(5);
-        $this->pdf->Cell(0,10,"Адрес: {$this->options['sender_address']}");
+        $this->pdf->SetFont('DejaVu','B',10);
+        $this->pdf->Cell(80,10,"Адрес:");
+        $this->pdf->Cell(20,10);
+        $this->pdf->SetFont('DejaVu','',10);
+        $this->pdf->Cell(0,10,$this->options['sender_address']);
         $this->pdf->Ln(15);
-        $this->pdf->Cell(0,10,"Грузополучатель: {$this->options['receiver']}");
+
+        $this->pdf->Cell(80,10,"Грузополучатель:");
+        $this->pdf->Cell(20,10);
+        $this->pdf->SetFont('DejaVu','',10);
+        $this->pdf->Cell(0,10,$this->options['receiver']);
         $this->pdf->Ln(5);
-        $this->pdf->Cell(0,10,"Адрес: {$this->options['receiver_address']}");
+        $this->pdf->SetFont('DejaVu','B',10);
+        $this->pdf->Cell(80,10,"Адрес:");
+        $this->pdf->Cell(20,10);
+        $this->pdf->SetFont('DejaVu','',10);
+        $this->pdf->Cell(0,10,$this->options['receiver_address']);
         $this->pdf->Ln(15);
     }
 
