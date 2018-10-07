@@ -17,7 +17,6 @@ class Com2Pdf
 
     public function __construct(array $options = [])
     {
-        $this->pdf = new PDF();
         $this->options = count($options) > 0 ? $options : [
             'date' => date('d.m.Y H:i:s'),
             'com_id' => date('dmYHis'),
@@ -26,6 +25,7 @@ class Com2Pdf
             'receiver' => 'ООО "Компания-получатель"',
             'receiver_address' => 'Москва, Носовихинское шоссе, 22',
         ];
+        $this->pdf = new PDF($this->options);
         $this->SetData();
     }
 

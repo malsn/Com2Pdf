@@ -8,17 +8,23 @@
  */
 class PDF extends tFPDF
 {
+    /**
+     * @var array
+     */
     private $pdf_options;
 
     /**
      * PDF constructor.
      */
-    public function __construct($options)
+    public function __construct(array $options)
     {
         $this->pdf_options = $options;
         parent::__construct();
     }
 
+    /**
+     *
+     */
     function Header(){
         $this->AddFont('DejaVu','','DejaVuSans.ttf',true);
         // Select Arial bold 15
