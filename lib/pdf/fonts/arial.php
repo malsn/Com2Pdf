@@ -19,6 +19,6 @@ $cw=array(
 	chr(242)=>750,chr(243)=>750,chr(244)=>750,chr(245)=>750,chr(246)=>750,chr(247)=>750,chr(248)=>750,chr(249)=>750,chr(250)=>750,chr(251)=>750,chr(252)=>750,chr(253)=>750,chr(254)=>750,chr(255)=>750);
 $enc='cp1251';
 $diff='128 /afii10051 /afii10052 131 /afii10100 136 /Euro 138 /afii10058 140 /afii10059 /afii10061 /afii10060 /afii10145 /afii10099 152 /.notdef 154 /afii10106 156 /afii10107 /afii10109 /afii10108 /afii10193 161 /afii10062 /afii10110 /afii10057 165 /afii10050 168 /afii10023 170 /afii10053 175 /afii10056 178 /afii10055 /afii10103 /afii10098 184 /afii10071 /afii61352 /afii10101 188 /afii10105 /afii10054 /afii10102 /afii10104 /afii10017 /afii10018 /afii10019 /afii10020 /afii10021 /afii10022 /afii10024 /afii10025 /afii10026 /afii10027 /afii10028 /afii10029 /afii10030 /afii10031 /afii10032 /afii10033 /afii10034 /afii10035 /afii10036 /afii10037 /afii10038 /afii10039 /afii10040 /afii10041 /afii10042 /afii10043 /afii10044 /afii10045 /afii10046 /afii10047 /afii10048 /afii10049 /afii10065 /afii10066 /afii10067 /afii10068 /afii10069 /afii10070 /afii10072 /afii10073 /afii10074 /afii10075 /afii10076 /afii10077 /afii10078 /afii10079 /afii10080 /afii10081 /afii10082 /afii10083 /afii10084 /afii10085 /afii10086 /afii10087 /afii10088 /afii10089 /afii10090 /afii10091 /afii10092 /afii10093 /afii10094 /afii10095 /afii10096 /afii10097';
-$file='bde2c30b73e191f5eb0136aeee624e67_arial.z';
+$file='arial.z';
 $originalsize=772640;
 ?>
