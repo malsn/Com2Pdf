@@ -9,7 +9,7 @@
 class PDF extends FPDF
 {
     function Header(){
-        $this->pdf->AddFont('ArialMT','','arial.php');
+        $this->AddFont('ArialMT','','arial.php');
         // Select Arial bold 15
         $this->SetFont('ArialMT','',10);
         // Move to the right
