@@ -24,7 +24,7 @@ class Com2Pdf
 
     protected function SetData()
     {
-        $this->pdf->AddFont('ArialMT','arial.php');
+        $this->pdf->AddFont('ArialMT','','arial.php');
         $this->pdf->SetFont('ArialMT','',35);
         $this->pdf->AddPage();
         $this->pdf->Cell(0,10,"Грузоотправитель: {$this->options['sender']} {$this->options['sender_address']}");
