@@ -16,6 +16,6 @@ $options=[
     'receiver_address' => 'Москва, Носовихинское шоссе, 22',
 ];
 
-$pdf_creator = new Com2Pdf($options);
+$pdf_creator = new Com2Pdf($options = []);
 $pdf_creator->Output();
 unset($pdf_creator);
