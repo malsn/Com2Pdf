@@ -30,7 +30,7 @@ class PDF extends tFPDF
         $this->SetFont('DejaVu','',14);
         $this->Cell(80);
         $this->Cell(30,10,'Поручение на перевозку груза',0,0,'C');
-        $this->Ln(5);
+        $this->Ln(10);
         $this->Cell(80);
         $this->Cell(30,10,"№ {$this->pdf_options['com_id']} от {$this->pdf_options['date']}",0,0,'C');
         $this->Ln(20);
