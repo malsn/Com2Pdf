@@ -32,6 +32,7 @@ class Com2Pdf
     {
         $this->pdf->AddPage();
         $this->pdf->AddFont('DejaVu','','DejaVuSans.ttf',true);
+        $this->pdf->AddFont('DejaVu','B','DejaVuSans-Bold.ttf',true);
         $this->pdf->SetFont('DejaVu','B',10);
         $this->pdf->Cell(80,10,"Грузоотправитель:");
         $this->pdf->Cell(20,10);
