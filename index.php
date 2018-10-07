@@ -7,6 +7,6 @@
  */
 require './Com2Pdf.php';
 
-$pdf_creator = new Com2Pdf($options = []);
+$pdf_creator = new Com2Pdf($options);
 $pdf_creator->Output();
 unset($pdf_creator);
