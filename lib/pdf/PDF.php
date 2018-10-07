@@ -9,7 +9,7 @@
 class PDF extends tFPDF
 {
     function Header(){
-        $this->AddFont('DejaVu','','DejaVuSans.php',true);
+        $this->AddFont('DejaVu','','DejaVuSans.ttf',true);
         // Select Arial bold 15
         $this->SetFont('DejaVu','',10);
         // Move to the right
