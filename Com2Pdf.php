@@ -21,9 +21,9 @@ class Com2Pdf
             'date' => date('d.m.Y H:i:s'),
             'com_id' => date('dmYHis'),
             'sender' => 'ООО "Компания-отправитель"',
-            'sender_address' => 'Санкт-Петербург, Комендантский проспеткт, 31 к1',
+            'sender_address' => '197000, Санкт-Петербург, Комендантский проспеткт, 31 к1',
             'receiver' => 'ООО "Компания-получатель"',
-            'receiver_address' => 'Москва, Носовихинское шоссе, 22',
+            'receiver_address' => '100000, Москва, Носовихинское шоссе, 22',
         ];
         $this->pdf = new PDF($this->options);
         $this->SetData();
@@ -34,14 +34,14 @@ class Com2Pdf
         $this->pdf->AddPage();
         $this->pdf->AddFont('DejaVu','','DejaVuSans.ttf',true);
         $this->pdf->SetFont('DejaVu','',10);
-
-        $this->pdf->Cell(0,10,"Грузоотправитель: {$this->options['sender']} {$this->options['sender_address']}");
-        // Line break
-        $this->pdf->Ln(20);
-
-        $this->pdf->Cell(0,10,"Грузополучатель: {$this->options['receiver']} {$this->options['receiver_address']}");
-        // Line break
-        $this->pdf->Ln(20);
+        $this->pdf->Cell(0,10,"Грузоотправитель: {$this->options['sender']}");
+        $this->pdf->Ln(5);
+        $this->pdf->Cell(0,10,"Адрес: {$this->options['sender_address']}");
+        $this->pdf->Ln(5);
+        $this->pdf->Cell(0,10,"Грузополучатель: {$this->options['receiver']}");
+        $this->pdf->Ln(5);
+        $this->pdf->Cell(0,10,"Адрес: {$this->options['receiver_address']}");
+        $this->pdf->Ln(5);
     }
 
     public function Output(){

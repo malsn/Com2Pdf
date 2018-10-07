@@ -27,16 +27,12 @@ class PDF extends tFPDF
      */
     function Header(){
         $this->AddFont('DejaVu','','DejaVuSans.ttf',true);
-        // Select Arial bold 15
         $this->SetFont('DejaVu','',14);
-        // Move to the right
         $this->Cell(80);
-        // Framed title
         $this->Cell(30,10,'Поручение на перевозку груза',0,0,'C');
-        // Line break
-        $this->Ln(20);
+        $this->Ln(5);
+        $this->Cell(80);
         $this->Cell(30,10,"№ {$this->pdf_options['com_id']} от {$this->pdf_options['date']}",0,0,'C');
-        // Line break
         $this->Ln(20);
     }
 }
