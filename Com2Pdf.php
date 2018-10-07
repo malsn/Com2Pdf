@@ -37,11 +37,11 @@ class Com2Pdf
 
         $this->pdf->Cell(0,10,"Грузоотправитель: {$this->options['sender']} {$this->options['sender_address']}");
         // Line break
-        $this->Ln(20);
+        $this->pdf->Ln(20);
 
         $this->pdf->Cell(0,10,"Грузополучатель: {$this->options['receiver']} {$this->options['receiver_address']}");
         // Line break
-        $this->Ln(20);
+        $this->pdf->Ln(20);
     }
 
     public function Output(){

@@ -16,7 +16,7 @@ class PDF extends tFPDF
     /**
      * PDF constructor.
      */
-    public function __construct(array $options)
+    public function __construct(array $options = [])
     {
         $this->pdf_options = $options;
         parent::__construct();
