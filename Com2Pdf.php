@@ -6,9 +6,8 @@
  * Date: 06.10.2018
  * Time: 14:59
  */
-//define('FPDF_FONTPATH', $_SERVER['DOCUMENT_ROOT'].'/Com2Pdf/lib/pdf/fonts/');
-require $_SERVER['DOCUMENT_ROOT'].'/Com2Pdf/lib/tfpdf/tfpdf.php';
-require $_SERVER['DOCUMENT_ROOT'].'/Com2Pdf/lib/pdf/PDF.php';
+require './lib/tfpdf/tfpdf.php';
+require './lib/pdf/PDF.php';
 
 class Com2Pdf
 {
