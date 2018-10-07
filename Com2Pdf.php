@@ -7,6 +7,7 @@
  * Time: 14:59
  */
 require $_SERVER['DOCUMENT_ROOT'].'/Com2Pdf/lib/fpdf181/fpdf.php';
+require $_SERVER['DOCUMENT_ROOT'].'/Com2Pdf/lib/pdf/PDF.php';
 
 class Com2Pdf
 {
@@ -14,10 +15,10 @@ class Com2Pdf
 
     public function __construct()
     {
-        $this->pdf = new FPDF();
+        $this->pdf = new PDF();
     }
 
-    public function SetData()
+    protected function SetData()
     {
         $this->pdf->AddPage();
         $this->pdf->SetFont('Arial','B',16);
