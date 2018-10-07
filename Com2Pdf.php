@@ -18,7 +18,14 @@ class Com2Pdf
     public function __construct(array $options = [])
     {
         $this->pdf = new PDF();
-        $this->options = $options;
+        $this->options = count($options) > 0 ? $options : [
+            'date' => date('d.m.Y H:i:s'),
+            'com_id' => date('dmYHis'),
+            'sender' => 'ООО "Компания-отправитель"',
+            'sender_address' => 'Санкт-Петербург, Комендантский проспеткт, 31 к1',
+            'receiver' => 'ООО "Компания-получатель"',
+            'receiver_address' => 'Москва, Носовихинское шоссе, 22',
+        ];
         $this->SetData();
     }
 
@@ -26,10 +33,15 @@ class Com2Pdf
     {
         $this->pdf->AddPage();
         $this->pdf->AddFont('DejaVu','','DejaVuSans.ttf',true);
-        $this->pdf->SetFont('DejaVu','',14);
+        $this->pdf->SetFont('DejaVu','',10);
 
         $this->pdf->Cell(0,10,"Грузоотправитель: {$this->options['sender']} {$this->options['sender_address']}");
+        // Line break
+        $this->Ln(20);
+
         $this->pdf->Cell(0,10,"Грузополучатель: {$this->options['receiver']} {$this->options['receiver_address']}");
+        // Line break
+        $this->Ln(20);
     }
 
     public function Output(){
