@@ -7,7 +7,7 @@
  * Time: 14:59
  */
 define('FPDF_FONTPATH', $_SERVER['DOCUMENT_ROOT'].'/Com2Pdf/lib/pdf/fonts/');
-require $_SERVER['DOCUMENT_ROOT'].'/Com2Pdf/lib/fpdf181/fpdf.php';
+require $_SERVER['DOCUMENT_ROOT'].'/Com2Pdf/lib/tfpdf/tfpdf.php';
 require $_SERVER['DOCUMENT_ROOT'].'/Com2Pdf/lib/pdf/PDF.php';
 
 class Com2Pdf
@@ -24,9 +24,10 @@ class Com2Pdf
 
     protected function SetData()
     {
-        $this->pdf->AddFont('ArialMT','','adcec164a032d33df8ff744f2aa7e2c3_arial.php');
-        $this->pdf->SetFont('ArialMT','',10);
         $this->pdf->AddPage();
+        $this->pdf->AddFont('DejaVu','','DejaVuSans.ttf',true);
+        $this->pdf->SetFont('DejaVu','',14);
+
         $this->pdf->Cell(0,10,"Грузоотправитель: {$this->options['sender']} {$this->options['sender_address']}");
         $this->pdf->Cell(0,10,"Грузополучатель: {$this->options['receiver']} {$this->options['receiver_address']}");
     }
