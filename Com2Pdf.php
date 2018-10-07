@@ -14,13 +14,13 @@ class Com2Pdf
     protected $pdf;
     private $options;
 
-    public function __construct(array $options = [])
+    public function __construct($options)
     {
-        $this->options = count($options) > 0 ? $options : [
+        $this->options = is_array($options) ? $options : [
             'date' => date('d.m.Y H:i:s'),
             'com_id' => date('dmYHis'),
             'sender' => 'ООО "Компания-отправитель"',
-            'sender_address' => '197000, Санкт-Петербург, Комендантский проспеткт, 31 к1',
+            'sender_address' => '197000, Санкт-Петербург, Комендантский проспект, 31 к1',
             'receiver' => 'ООО "Компания-получатель"',
             'receiver_address' => '100000, Москва, Носовихинское шоссе, 22',
         ];
@@ -31,35 +31,36 @@ class Com2Pdf
     protected function SetData()
     {
         $this->pdf->AddPage();
-        $this->pdf->AddFont('DejaVu','','DejaVuSans.ttf',true);
-        $this->pdf->AddFont('DejaVu','B','DejaVuSans-Bold.ttf',true);
-        $this->pdf->SetFont('DejaVu','B',10);
-        $this->pdf->Cell(50,10,'Грузоотправитель:');
-        $this->pdf->Cell(20,10);
-        $this->pdf->SetFont('DejaVu','',10);
-        $this->pdf->Cell(0,10,$this->options['sender']);
+        $this->pdf->AddFont('DejaVu', '', 'DejaVuSans.ttf', true);
+        $this->pdf->AddFont('DejaVu', 'B', 'DejaVuSans-Bold.ttf', true);
+        $this->pdf->SetFont('DejaVu', 'B', 10);
+        $this->pdf->Cell(50, 10, 'Грузоотправитель:');
+        $this->pdf->Cell(20, 10);
+        $this->pdf->SetFont('DejaVu', '', 10);
+        $this->pdf->Cell(0, 10, $this->options['sender']);
         $this->pdf->Ln(5);
-        $this->pdf->SetFont('DejaVu','B',10);
-        $this->pdf->Cell(50,10,'Адрес:');
-        $this->pdf->Cell(20,10);
-        $this->pdf->SetFont('DejaVu','',10);
-        $this->pdf->Cell(0,10,$this->options['sender_address']);
+        $this->pdf->SetFont('DejaVu', 'B', 10);
+        $this->pdf->Cell(50, 10, 'Адрес:');
+        $this->pdf->Cell(20, 10);
+        $this->pdf->SetFont('DejaVu', '', 10);
+        $this->pdf->Cell(0, 10, $this->options['sender_address']);
         $this->pdf->Ln(15);
-        $this->pdf->SetFont('DejaVu','B',10);
-        $this->pdf->Cell(50,10,'Грузополучатель:');
-        $this->pdf->Cell(20,10);
-        $this->pdf->SetFont('DejaVu','',10);
-        $this->pdf->Cell(0,10,$this->options['receiver']);
+        $this->pdf->SetFont('DejaVu', 'B', 10);
+        $this->pdf->Cell(50, 10, 'Грузополучатель:');
+        $this->pdf->Cell(20, 10);
+        $this->pdf->SetFont('DejaVu', '', 10);
+        $this->pdf->Cell(0, 10, $this->options['receiver']);
         $this->pdf->Ln(5);
-        $this->pdf->SetFont('DejaVu','B',10);
-        $this->pdf->Cell(50,10,'Адрес:');
-        $this->pdf->Cell(20,10);
-        $this->pdf->SetFont('DejaVu','',10);
-        $this->pdf->Cell(0,10,$this->options['receiver_address']);
+        $this->pdf->SetFont('DejaVu', 'B', 10);
+        $this->pdf->Cell(50, 10, 'Адрес:');
+        $this->pdf->Cell(20, 10);
+        $this->pdf->SetFont('DejaVu', '', 10);
+        $this->pdf->Cell(0, 10, $this->options['receiver_address']);
         $this->pdf->Ln(15);
     }
 
-    public function Output(){
+    public function Output()
+    {
         $this->pdf->Output();
     }
 }
