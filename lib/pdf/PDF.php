@@ -1,20 +1,19 @@
 <?php
 
 /**
- * Created by PhpStorm.
- * User: sergey malyshev
- * Date: 07.10.2018
- * Time: 20:34
+ * Класс PDF наследует класс библиотеки tFPDF для переопределения метода вывода шапки документа,
+ * содержащего Наименование, ID и дату поручения
  */
 class PDF extends tFPDF
 {
     /**
      * @var array
+     * Значения, получаемые из входных параметров
      */
     private $pdf_options;
 
     /**
-     * PDF constructor.
+     * PDF constructor, переопределяем для того, чтобы присвоить объекту наши кастомные значения шапки поручения
      */
     public function __construct($options)
     {
@@ -26,9 +25,9 @@ class PDF extends tFPDF
     }
 
     /**
-     *
+     * Переопределнный метод вывода шапки поручения
      */
-    function Header()
+    public function Header()
     {
         $this->AddFont('DejaVu', '', 'DejaVuSans.ttf', true);
         $this->SetFont('DejaVu', '', 14);

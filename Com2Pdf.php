@@ -1,21 +1,27 @@
 <?php
 
 /**
- * Created by PhpStorm.
- * User: Sergey Malyshev
- * Date: 06.10.2018
- * Time: 14:59
+ * Подключаем внешнюю библиотеку tFPDF для построения и вывода данных в PDF,
+ * а также кастомный наследованный класс.
  */
 require './lib/tfpdf/tfpdf.php';
 require './lib/pdf/PDF.php';
 
+/**
+ * Class Com2Pdf - класс нашего приложения, принимающий входные данные и выводящий данные в PDF
+ */
+
 class Com2Pdf
 {
-    protected $pdf;
+    // переменная, содержащая экземпляр библиотеки tFPDF
+    private $pdf;
+    // переменная, содержащая входные данные приложения
     private $options;
 
     public function __construct($options)
     {
+        // Если на вход подается тип-массив, то он используется для заполнения печатного бланка.
+        // В противном случае используются значения по умолчанию
         $this->options = is_array($options) ? $options : [
             'date' => date('d.m.Y H:i:s'),
             'com_id' => date('dmYHis'),
@@ -24,13 +30,17 @@ class Com2Pdf
             'receiver' => 'ООО "Компания-получатель"',
             'receiver_address' => '100000, Москва, Носовихинское шоссе, 22',
         ];
+        // Создаем объект PDF-документа с передачей входных параметров
         $this->pdf = new PDF($this->options);
+        //Устанавливаем значения документа
         $this->SetData();
     }
 
     protected function SetData()
     {
+        // Создаем страницу
         $this->pdf->AddPage();
+        // Подключаем шрифты кириллические
         $this->pdf->AddFont('DejaVu', '', 'DejaVuSans.ttf', true);
         $this->pdf->AddFont('DejaVu', 'B', 'DejaVuSans-Bold.ttf', true);
         $this->pdf->SetFont('DejaVu', 'B', 10);
@@ -61,6 +71,7 @@ class Com2Pdf
 
     public function Output()
     {
+        // выводим результат в браузер ( по умолчанию )
         $this->pdf->Output();
     }
 }
